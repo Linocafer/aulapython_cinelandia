@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "titulo": "Estudar Python",
+        "descricao": "Revisar decorators e OOP",
+        "prioridade": 5,
+        "concluida": true
+    },
+    {
+        "id": 2,
+        "titulo": "Academia",
+        "descricao": "Treino de pernas",
+        "prioridade": 3,
+        "concluida": false
+    }
+]
