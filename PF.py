@@ -44,3 +44,13 @@ df.to_excel(arquivo, index=False, engine="openpyxl")
 
 print(f"✅ Planilha '{arquivo}' criada com sucesso!")
 
+import matplotlib.pyplot as plt
+
+# Filtra despesas
+despesas = df[df["Valor (R$)"] < 0]
+despesas["Valor (R$)"] = despesas["Valor (R$)"].abs()
+
+# Gráfico de pizza
+plt.pie(despesas["Valor (R$)"], labels=despesas["Descrição"], autopct="%.1f%%")
+plt.title("Distribuição de Despesas")
+plt.show()
