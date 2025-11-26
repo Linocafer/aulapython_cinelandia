@@ -1,22 +1,19 @@
-# Definição da função
-def calcular_imc(peso, altura):
-    return peso / (altura ** 2)
+def dividir(a, b):
+    try:
+        resultado = a / b
+    except ZeroDivisionError:
+        return "Erro: Não é possível dividir por zero."
+    except TypeError:
+        return "Erro: Digite apenas números."
+    else:
+        return f"Resultado da divisão: {resultado}"
+    finally:
+        print("Operação finalizada (com ou sem erro).")
 
-# Programa principal
-peso = float(input("Digite seu peso em kg: "))
-altura = float(input("Digite sua altura em metros: "))
-
-imc = calcular_imc(peso, altura)
-print(f"Seu IMC é: {imc:.2f}")
-
-# Classificação do IMC
-if imc < 18.5:
-    print("Você está abaixo do peso.")
-elif imc < 25:
-    print("Seu peso está normal.")
-elif imc < 30:
-    print("Você está com sobrepeso.")
-else:
-    print("Você está com obesidade.")
-
-
+# Exemplo de uso interativo
+try:
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    print(dividir(num1, num2))  # Agora imprime o resultado ou erro
+except ValueError:
+    print("Você deve digitar apenas números válidos.")
